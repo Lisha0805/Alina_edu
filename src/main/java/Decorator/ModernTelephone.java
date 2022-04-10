@@ -2,10 +2,11 @@ package Decorator;
 
 public class ModernTelephone implements Telephone{
 
-    private Telephone telephone;
+    private final Telephone telephone;
     public ModernTelephone(Telephone telephone){
         this.telephone = telephone;
     }
+
     @Override
     public int getMemory() {
         return this.telephone.getMemory();

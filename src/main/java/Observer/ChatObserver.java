@@ -1,5 +1,6 @@
 package Observer;
 
 public interface ChatObserver {
-    void notifyObservers();
+    String name = null;
+    void update(String message);
 }
