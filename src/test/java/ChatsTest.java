@@ -10,23 +10,25 @@ class ChatsTest {
 
     Chats chat;
     ChatObserver chatObserver;
+    int expectedChatSize;
 
     @BeforeEach
     void createChatAndCreateObserver() {
         chat = new Chats();
         chatObserver = new User("Юзер1");
+        expectedChatSize = 1;
     }
 
     @Test
     void addObserverTest(){
         chat.addObserver(chatObserver);
-        assertEquals(1, chat.getObservers().size());
+        assertEquals(expectedChatSize, chat.getObservers().size());
     }
 
     @Test
     void removeObserverTest(){
         chat.addObserver(chatObserver);
         chat.removeObserver(chatObserver);
-        assertEquals(0, chat.getObservers().size());
+        assertEquals(expectedChatSize - 1, chat.getObservers().size());
     }
 }

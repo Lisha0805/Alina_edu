@@ -7,6 +7,10 @@ public class Chats implements ChatObservable {
     private final List<ChatObserver> observers = new ArrayList<>();
     private String message;
 
+    public List<ChatObserver> getObservers() {
+        return observers;
+    }
+
     @Override
     public void addObserver(ChatObserver observer) {
         observers.add(observer);
